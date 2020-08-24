@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cats
+  namespace: udacity
+  labels:
+    app: cats
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cats
+  template:
+    metadata:
+      labels:
+        app: cats
+    spec:
+      containers:
+      - name: cats
+        image: rcmelendez/cats
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80

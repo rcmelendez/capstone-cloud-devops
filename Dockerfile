@@ -1,4 +1,4 @@
-FROM python:3
+FROM python
 
 # set a directory for the app
 WORKDIR /usr/src/app
