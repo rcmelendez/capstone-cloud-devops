@@ -32,11 +32,11 @@ For the Docker application, I used an existing Flask app that displays a GIF of 
 
 
 ## AWS EKS cluster
-Per project directions, I developed an independent Jenkins pipeline that creates an AWS EKS cluster. For the source code, go to the [eks-cluster](https://github.com/rcmelendez/eks-cluster) repo.
+Per project directions, I developed an independent Jenkins pipeline that creates an AWS EKS cluster. For the source code, visit the [eks-cluster](https://github.com/rcmelendez/eks-cluster) repo.
 
 
 ## Jenkins pipeline
-This is a CI/CD pipeline that deploys a Docker image to a Kubernetes cluster on Amazon EKS using Jenkins. For the Continuous Integration steps, it lints the Dockerfile and performs a security scan using Aqua Microscanner. For Continuous Deployment, it builds the Docker image, verifies if the Docker container responds to an HTTP request, then it pushes the image to Docker Hub. To avoid filling up the disk, it removes the local image. Then, it deploys the image to a AWS EKS cluster. Finally, it updates the pods to use the latest image with no downtime. 
+This is a CI/CD pipeline that deploys a Docker image to a Kubernetes cluster on Amazon EKS using Jenkins. For the Continuous Integration steps, it lints the Dockerfile and performs a security scan using Aqua Microscanner. For Continuous Deployment, it builds the Docker image, verifies if the Docker container responds to an HTTP request, then it pushes the image to Docker Hub. To avoid filling up the disk, it removes the local image. Then, it deploys the image to an AWS EKS cluster. Finally, it updates the pods to use the latest image with no downtime. 
 
 These are all the stages of the pipeline:
 
@@ -51,4 +51,3 @@ Project licensed under the terms of the MIT License. See the `LICENSE` file for 
 ## Contact
 Find me as __rcmelendez__ on [LinkedIn](https://www.linkedin.com/in/rcmelendez/), 
 [Medium](https://medium.com/@rcmelendez), and of course [GitHub](https://github.com/rcmelendez/).
-
