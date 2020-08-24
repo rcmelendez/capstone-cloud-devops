@@ -39,9 +39,21 @@ Per project directions, I developed an independent Jenkins pipeline that creates
 This is a CI/CD pipeline that deploys a Docker image to a Kubernetes cluster on Amazon EKS using Jenkins. For the Continuous Integration steps, it lints the Dockerfile and performs a security scan using Aqua Microscanner. For Continuous Deployment, it builds the Docker image, verifies if the Docker container responds to an HTTP request, then it pushes the image to Docker Hub. To avoid filling up the disk, it removes the local image. Then, it deploys the image to an AWS EKS cluster. Finally, it updates the pods to use the latest image with no downtime. 
 
 These are all the stages of the pipeline:
+![Jenkins pipeline](./images/jenkins-pipeline.png)
 
 
 ## Validation
+List all the Kubernetes cluster resources from the udacity namespace with kubectl:
+```
+kubectl get all -o wide -n udacity
+```
+![Kubectl output](./images/kubectl-resources.png)
+
+Enter the Load Balancer public DNS name to access the web app:
+
+http://a14746228a01b4241bd83a3a425e5877-1242614637.us-east-2.elb.amazonaws.com
+
+![Webapp](./images/webapp.png)
 
 
 ## License
